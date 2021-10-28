@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+body{
+  background: linear-gradient( 90deg, rgb(99, 98, 98), rgb(243, 239, 239) );
+  color: #000;
+  margin: 0px;
+  text-align: center;
+ 
+}
+h1{
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+}
+.container{
+   color: #000;
+display: inline-block;
+font-weight: 100;
+text-align: center;
+font-size: 30px;
+font-family: 'Oswald', sans-serif;
+}
+.container > div{
+padding: 20px;
+background: #fff;
+display: inline-block;
+margin: 10px;
+}
+.container div > span{
+background: #fff;
+display: inline-block;
+}
+smalltext{
+padding-top: 5px;
+font-size: 16px;
+}
+#text{
+font-family: 'Oswald', sans-serif;
+font-size: 5rem;
+}
