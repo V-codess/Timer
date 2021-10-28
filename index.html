@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="shortcut icon" href="count.ico" type="image/x-icon">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+    body{
+      background: linear-gradient( 90deg, rgb(99, 98, 98), rgb(243, 239, 239) );
+      color: #000;
+      margin: 0px;
+      text-align: center;
+     
+    }
+    h1{
+        font-size: 2rem;
+        font-family: 'Oswald', sans-serif;
+        padding: 20px;
+    }
+    .container{
+       color: #000;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    }
+    .container > div{
+    padding: 20px;
+    background: #fff;
+    display: inline-block;
+    margin: 10px;
+}
+.container div > span{
+    background: #fff;
+    display: inline-block;
+}
+smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+#text{
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+}
+    </style>
+</head>
+<body>
+    <h1>Countdown-Timer</h1>
+    <div class="container">
+        <div>
+            <span class="days" id="day"></span>
+            <div class="smalltext">Days</div>
+          </div>
+          <div>
+            <span class="hours" id="hours"></span>
+            <div class="smalltext">Hours</div>
+          </div>
+          <div>
+            <span class="minutes" id="minutes"></span>
+            <div class="smalltext">Minutes</div>
+          </div>
+          <div>
+            <span class="seconds" id="seconds"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+    </div>
+    <p id="text"></p>
+    <script>
+        var endDate = new Date("Sep 25, 2022 23:59:59").getTime();
+        x = setInterval(() => {
+            var startDate = new Date().getTime();
+            var time = (endDate - startDate);
+            var days = Math.floor(time / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((time %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+            var minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((time % (1000 * 60)) / 1000);
+           document.getElementById("day").innerHTML = days;
+           document.getElementById("hours").innerHTML = hours;
+           document.getElementById("minutes").innerHTML = minutes;
+           document.getElementById("seconds").innerHTML = seconds;
+           document.getElementById("text").innerHTML = "";
+            if (time < 0) {
+        clearInterval(x);
+        document.getElementById("text").innerHTML = "Oops! Next Time!";
+        document.getElementById("day").innerHTML ='0';
+        document.getElementById("hours").innerHTML ='0';
+        document.getElementById("minutes").innerHTML ='0' ; 
+        document.getElementById("seconds").innerHTML = '0'; }
+        }, 1000);
+    </script>
+</body>
+</html>
